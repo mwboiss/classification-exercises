@@ -7,10 +7,10 @@ from env import get_db_url, username, password, host
 
 #1: Make a function named get_titanic_data that returns the titanic data from the codeup data science database as a pandas data frame. Obtain your data from the Codeup Data Science Database.
 
-def get_titanic_data():
+def get_titanic_data(use_cache=True):
     filename = 'titanic.csv'
-    if os.path.exists(filename):
-        print('Reading from csv file...')
+    if os.path.exists(filename) and use_cache:
+        print('Using cached csv file...')
         return pd.read_csv(filename)
     
     print('Getting a fresh copy from the database...')
@@ -26,10 +26,10 @@ def get_titanic_data():
 
 #2: Make a function named get_iris_data that returns the data from the iris_db on the codeup data science database as a pandas data frame. The returned data frame should include the actual name of the species in addition to the species_ids. Obtain your data from the Codeup Data Science Database.
 
-def get_iris_data():
+def get_iris_data(use_cache=True):
     filename = 'iris.csv'
-    if os.path.exists(filename):
-        print('Reading from csv file...')
+    if os.path.exists(filename) and use_cache:
+        print('Using cached csv file...')
         return pd.read_csv(filename)
     
     print('Getting a fresh copy from the database...')
@@ -47,10 +47,10 @@ def get_iris_data():
 
 #3: Make a function named get_telco_data that returns the data from the telco_churn database in SQL. In your SQL, be sure to join all 4 tables together, so that the resulting dataframe contains all the contract, payment, and internet service options. Obtain your data from the Codeup Data Science Database.
 
-def get_telco_data():
+def get_telco_data(use_cache=True):
     filename = 'telco.csv'
-    if os.path.exists(filename):
-        print('Reading from csv file...')
+    if os.path.exists(filename) and use_cache:
+        print('Using cached csv file...')
         return pd.read_csv(filename)
     
     print('Getting a fresh copy from the database...')
