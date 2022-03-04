@@ -28,15 +28,18 @@ def prep_iris():
     
     return iris
 
+
 # Using the Titanic dataset
 # Use the function defined in acquire.py to load the Titanic data.
 # Drop any unnecessary, unhelpful, or duplicated columns.
 # Encode the categorical columns. Create dummy variables of the categorical columns and concatenate them onto the dataframe.
 # Create a function named prep_titanic that accepts the raw titanic data, and returns the data with the transformations above applied.
 
-def prep_titanic():
+#titanic = acquire.get_titanic_data()
+
+def prep_titanic(titanic):
     
-    titanic = get_titanic_data()
+    
     
     drop_columns = ['class','embarked']
     titanic = titanic.drop(columns=drop_columns)
